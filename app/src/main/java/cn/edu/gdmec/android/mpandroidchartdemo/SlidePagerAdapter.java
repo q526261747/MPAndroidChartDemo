@@ -1,25 +1,17 @@
 package cn.edu.gdmec.android.mpandroidchartdemo;
 
-import android.app.Activity;
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.ViewGroup;
-
-import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by 52626 on 2017/12/5.
- */
+class SlidePagerAdapter extends PagerAdapter {
 
-public class SlidePagerAdapter extends PagerAdapter {
-
-    private Context context;
+    protected Context context;
     private List<View> viewdata;
 
-    public SlidePagerAdapter(MainActivity mainActivity, List<View> mview) {
+    SlidePagerAdapter(MainActivity mainActivity, List<View> mview) {
         context = mainActivity;
         viewdata = mview;
     }
@@ -43,7 +35,6 @@ public class SlidePagerAdapter extends PagerAdapter {
     @Override
     public void destroyItem(ViewGroup container, int position,
                             Object object) {
-        // TODO Auto-generated method stub
         container.removeView(viewdata.get(position));
     }
 }
